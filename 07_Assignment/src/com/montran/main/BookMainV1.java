@@ -61,6 +61,7 @@ public class BookMainV1 {
 	    	System.out.println("book added sucesssfully");
 	    else
 	    	System.out.println("book addition failed");
+	     break;
 	    
 	case 2:
 		System.out.println("how many books you want to add");
@@ -103,6 +104,7 @@ public class BookMainV1 {
 				System.out.println("book details updation failed");
 		}else
 			System.out.println("no book found");
+		break;
 		
 	case 4:
 		System.out.println(" enter bookid no");
