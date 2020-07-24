@@ -27,7 +27,7 @@ public class BookMainV1 {
 		
 		
 		do {
-			//books=bookUtil.getAllBook();
+			books=bookUtil.getAllBook();
 			for(Book booktemp:books){
 				if(booktemp!=null){
 					System.out.println(booktemp.getBookId()+"\t"+booktemp.getName()+"\t"+booktemp.getPrice());
