@@ -14,39 +14,27 @@
 <title>Product Details</title>
 </head>
 <body>
-<%!  String Name = "";%>
-		 	 
-		 	<% Set<String> products = new LinkedHashSet<String>();%>
-		 	
-		<h3>Product Details</h3>
-		<hr>
-		
-		<form action = "" method = "post">
-			<table>
-				<tr>
-					<td>ProductName: </td>
-					<td><input type="text" name="txtProductName"></td>
-					<td></td><br><br>
-				</tr>
-				
-				<tr>
-					<td><input type="submit" value="Print"></td>
-					<td><input type="reset" value="Clear"></td>
-					<td></td>
-				</tr>
-			</table>
-		</form>
-    <br><br>
-		<%	
-		if (request.getParameter("txtProductName") != null)
-		{
-				Name =  request.getParameter("txtProductName");
-				products.add(Name);
-				
-		}	%> 
-		<br>
-		<% for (int i=0; i<products.size(); i++) %>
-				Suggestion : <%= products %>   
-    
+<% Set<String> productSet= new HashSet<>();   %>
+
+<form action="" method="post">
+Product Name= <input type ="text" name="productname">
+<input type ="submit" value="print">
+</form>
+<hr>
+
+<% if(request.getParameter("productname")!= null){
+	productSet.add(request.getParameter("productname"));
+	}
+	if(application.getAttribute("name") == null)
+		application.setAttribute("name", productSet);
+%>
+
+Suggestion:
+<% for(String name1 : productSet){ %>
+<%= name1+"," %>
+<% }%>
+
+<% application.setAttribute("name", productSet); %>
+
 </body>
 </html>
