@@ -14,7 +14,7 @@
 <title>Product Details</title>
 </head>
 <body>
-<% Set<String> productSet= new HashSet<>();   %>
+<%! Set<String> productSet= new HashSet<>();   %>
 
 <form action="" method="post">
 Product Name= <input type ="text" name="productname">
